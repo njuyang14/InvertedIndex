@@ -24,7 +24,7 @@ public class InvertedIndex {
         //set job
         try {
             Configuration conf=new Configuration();//从hadoop配置文件中读取参数
-            DistributedCache.addCacheFile(new URI("./stop-words.txt"),conf);
+            //DistributedCache.addCacheFile(new URI("./stop-words.txt"),conf);
             //从命令行读取参数
             String[] otherArgs = new GenericOptionsParser(conf,args).getRemainingArgs();
 

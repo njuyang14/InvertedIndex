@@ -17,6 +17,6 @@ public class SumCombiner extends Reducer<Text, IntWritable, Text, IntWritable> {
             sum += val.get();
         }
         result.set(sum);
-        context.write(key,result);
+        context.write(key,result);//<key:word#doc,value:sum>
     }
 }

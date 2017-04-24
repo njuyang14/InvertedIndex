@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="commons-cli-1.4">
     <CLASSES>
-      <root url="jar://$USER_HOME$/hadoop_installs/hadoop-2.7.1/commons-cli-1.4/commons-cli-1.4.jar!/" />
+      <root url="jar://$USER_HOME$/hadoop_installs/commons-cli-1.4/commons-cli-1.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

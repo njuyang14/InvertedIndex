@@ -10,5 +10,6 @@ public class NewPartitioner extends HashPartitioner<Text, IntWritable> {
         String term = new String();
         term = key.toString().split("#")[0];
         return super.getPartition(new Text(term), value, numReduceTasks);
+        //根据(key:<word#doc>)中的word进行划分，保证同一word的进入同一reducer
     }
 }

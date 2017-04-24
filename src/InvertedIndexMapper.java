@@ -23,7 +23,7 @@ public class InvertedIndexMapper extends Mapper<Object, Text, Text, IntWritable>
     private Set<String> stopwords;
     private Path[] localFiles;
 
-    public void setup(Context context)throws IOException,InterruptedException{
+    /*public void setup(Context context)throws IOException,InterruptedException{
         stopwords = new TreeSet<String>();
         Configuration conf = context.getConfiguration();
         localFiles = DistributedCache.getLocalCacheFiles(conf);
@@ -37,7 +37,7 @@ public class InvertedIndexMapper extends Mapper<Object, Text, Text, IntWritable>
                 }
             }
         }
-    }
+    }*/
 
     protected void map(Object key, Text value, Context context)
             throws IOException, InterruptedException{
@@ -49,11 +49,11 @@ public class InvertedIndexMapper extends Mapper<Object, Text, Text, IntWritable>
         StringTokenizer itr = new StringTokenizer(line);
         for(;itr.hasMoreTokens();){
             temp = itr.nextToken();
-            if(!stopwords.contains(temp)){
+            //if(!stopwords.contains(temp)){
                 Text word = new Text();
                 word.set(temp+"#"+fileName);//format:<word#doc1>
-                context.write(word,new IntWritable(1));
-            }
+                context.write(word,new IntWritable(1));//<key:word#doc,value:1>
+            //}
         }
     }
 }
