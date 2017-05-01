@@ -43,7 +43,7 @@ public class InvertedIndexMapper extends Mapper<Object, Text, Text, IntWritable>
             throws IOException, InterruptedException{
         // default RecordReader: LineRecordReader; key: line offset; value: line string
         FileSplit fileSplit = (FileSplit) context.getInputSplit();
-        String fileName = fileSplit.getPath().getName();
+        String fileName = fileSplit.getPath().getName().toString().split(".txt|.TXT")[0];
         String temp = new String();
         String line = value.toString().toLowerCase();
         StringTokenizer itr = new StringTokenizer(line);
