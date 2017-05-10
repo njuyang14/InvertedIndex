@@ -12,5 +12,6 @@
     <orderEntry type="library" name="hadoop-common-2.7.1" level="project" />
     <orderEntry type="library" name="hadoop-mapreduce-client-common-2.7.1" level="project" />
     <orderEntry type="library" name="commons-cli-1.4" level="project" />
+    <orderEntry type="library" name="lib-hbase" level="project" />
   </component>
 </module>
